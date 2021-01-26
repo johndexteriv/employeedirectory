@@ -1,0 +1,12 @@
+.search {
+	width: 80%;
+	margin: auto;
+	padding: 10px;
+}
+input {
+	text-align: center;
+}
+.container-fluid {
+	display: block;
+	background-color: gainsboro;
+}

@@ -1,9 +1,10 @@
 import React from "react";
+import "./style.css";
 
 const SearchForm = () => {
 	return (
 		<>
-			<div>
+			<div className="container-fluid">
 				<form className="search">
 					<div className="form-group">
 						<br></br>
