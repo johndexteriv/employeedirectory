@@ -10,7 +10,7 @@ const SearchPage = () => {
 	return (
 		<>
 			<Header />
-			<Container style={{ height: "95%", width: "100%" }}>
+			<Container style={{ minHeight: "95%", width: "80%" }}>
 				<SearchForm />
 			</Container>
 		</>
