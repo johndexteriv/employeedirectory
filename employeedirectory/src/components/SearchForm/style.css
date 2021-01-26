@@ -8,5 +8,6 @@ input {
 }
 .container-fluid {
 	display: block;
+	position: relative;
 	background-color: gainsboro;
 }
