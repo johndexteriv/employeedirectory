@@ -1,0 +1,17 @@
+header {
+	background-color: darkblue;
+	margin: auto;
+	padding: 10px;
+	border-bottom: 3px solid red;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+p {
+	font-size: large;
+	font-weight: bold;
+	color: slategray;
+}
