@@ -12,7 +12,7 @@ const SearchPage = () => {
 			<Header />
 			<Container style={{ minHeight: "95%", width: "80%" }}>
 				<SearchForm />
-				<SearchResults />
+				<SearchResults handleInputChange={handleInputChange} results={search} />
 			</Container>
 		</>
 	);

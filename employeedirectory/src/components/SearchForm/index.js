@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const SearchForm = () => {
+const SearchForm = (props) => {
 	return (
 		<>
 			<div className="container-fluid">
@@ -9,8 +9,8 @@ const SearchForm = () => {
 					<div className="form-group">
 						<br></br>
 						<input
-							// value={props.search}
-							// onChange={props.handleInputChange}
+							value={props.search}
+							onChange={props.handleInputChange}
 							name="search"
 							list="search"
 							type="text"
