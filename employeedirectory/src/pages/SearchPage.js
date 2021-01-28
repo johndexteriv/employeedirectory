@@ -3,11 +3,11 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import SearchForm from "../components/SearchForm";
-import SearchHeader from "../components/SearchHeader";
+// import SearchHeader from "../components/SearchHeader";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
-	const [search, setSearch] = useState("results=50");
+	const [search, setSearch] = useState("");
 	const [employees, setEmployees] = useState({});
 
 	useEffect(() => {
@@ -19,7 +19,7 @@ const SearchPage = () => {
 				throw new Error(res.data.message);
 			}
 			setEmployees(res.data.results);
-			// console.log(res);
+			console.log(res.data.results);
 		});
 		// .catch((error) => setError(error));
 	}, [search]);
@@ -33,7 +33,7 @@ const SearchPage = () => {
 			<Header />
 			<Container style={{ minHeight: "95%", width: "80%" }}>
 				<SearchForm handleInputChange={handleInputChange} results={search} />
-				<SearchHeader />
+				{/* <SearchHeader /> */}
 				<SearchResults employees={employees} />
 			</Container>
 		</>
