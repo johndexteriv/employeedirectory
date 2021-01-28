@@ -1,7 +1,8 @@
 import React from "react";
 import "./style.css";
 
-const SearchResults = () => {
+const SearchResults = (props) => {
+	// console.log(props);
 	return (
 		<div>
 			<div className="search-header">
@@ -13,7 +14,17 @@ const SearchResults = () => {
 					<li>DOB</li>
 				</ul>
 			</div>
-			<ul className="list-group search-results"></ul>
+			<ul className="list-group search-results">
+				{props.employees.map((person) => (
+					<>
+						<li key={person.id.value}>{person.picture.thumbnail}</li>
+						<li>{person.name.first}</li>
+						<li>{person.cell}</li>
+						<li>{person.email}</li>
+						<li>{person.dob.date}</li>
+					</>
+				))}
+			</ul>
 		</div>
 	);
 };
