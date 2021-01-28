@@ -3,6 +3,7 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import SearchForm from "../components/SearchForm";
+import SearchHeader from "../components/SearchHeader";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
@@ -32,6 +33,7 @@ const SearchPage = () => {
 			<Header />
 			<Container style={{ minHeight: "95%", width: "80%" }}>
 				<SearchForm handleInputChange={handleInputChange} results={search} />
+				<SearchHeader />
 				<SearchResults employees={employees} />
 			</Container>
 		</>

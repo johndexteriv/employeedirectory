@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const SearchResults = () => {
+const SearchHeader = () => {
 	// console.log(props);
 	return (
 		<div>
@@ -18,4 +18,4 @@ const SearchResults = () => {
 	);
 };
 
-export default SearchResults;
+export default SearchHeader;

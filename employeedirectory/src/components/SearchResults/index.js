@@ -14,7 +14,7 @@ const SearchResults = (props) => {
 					<li>DOB</li>
 				</ul>
 			</div> */}
-			<ul className="list-group search-results">
+			{/* <ul className="list-group search-results">
 				{props.employees.map((person) => (
 					<>
 						<li key={person.id.value}>{person.picture.thumbnail}</li>
@@ -24,7 +24,7 @@ const SearchResults = (props) => {
 						<li>{person.dob.date}</li>
 					</>
 				))}
-			</ul>
+			</ul> */}
 		</div>
 	);
 };
