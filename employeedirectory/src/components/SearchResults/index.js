@@ -8,7 +8,10 @@ const SearchResults = (props) => {
 			<thead>
 				<tr>
 					<th>Image</th>
-					<th>Name</th>
+					<th className="dropdown-toggle" data-toggle="dropdown">
+						Name
+						<span className="caret"></span>
+					</th>
 					<th>Phone</th>
 					<th>Email</th>
 					<th>DOB</th>
