@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const SearchResults = (props) => {
+const SearchResults = () => {
 	// console.log(props);
 	return (
 		<div>
