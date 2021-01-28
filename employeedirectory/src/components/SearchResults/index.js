@@ -5,7 +5,7 @@ const SearchResults = (props) => {
 	// console.log(props);
 	return (
 		<div>
-			<div className="search-header">
+			{/* <div className="search-header">
 				<ul>
 					<li>Image</li>
 					<li className="name">Name</li>
@@ -13,7 +13,7 @@ const SearchResults = (props) => {
 					<li>Email</li>
 					<li>DOB</li>
 				</ul>
-			</div>
+			</div> */}
 			<ul className="list-group search-results">
 				{props.employees.map((person) => (
 					<>
