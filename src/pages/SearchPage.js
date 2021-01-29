@@ -23,18 +23,32 @@ const SearchPage = () => {
 	}, []);
 
 	const handleInputChange = (event) => {
+		event.preventDefault();
 		const searchQuery = event.target.value;
 		const searchQueryList = employees.filter((employee) => {
 			let values = Object.values(employee).join("").toLowerCase();
+
 			return values.indexOf(searchQuery.toLowerCase()) !== -1;
 		});
 		setFilteredEmployees(searchQueryList);
 	};
 
-	// const handleClick = (event) => {
-	// 	console.log("clickedddd", event.target.value);
-	// };
-	// console.log(handleClick);
+	const handleClick = (event) => {
+		let clicked = false;
+
+		const ascending = filteredEmployees.sort((a, b) => {
+			var nameA = a.name.first.toLowerCase(),
+				nameB = b.name.first.toLowerCase();
+			if (nameA < nameB) return -1;
+			if (nameA > nameB) return 1;
+			return 0;
+		});
+		setFilteredEmployees(ascending);
+		clicked = true;
+		console.log(clicked);
+		console.log("employees ascending", ascending);
+	};
+
 	return (
 		<>
 			<Header />
@@ -42,6 +56,7 @@ const SearchPage = () => {
 				<SearchResults
 					employees={filteredEmployees}
 					handleInputChange={handleInputChange}
+					handleClick={handleClick}
 				/>
 			</Container>
 		</>

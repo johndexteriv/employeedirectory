@@ -2,9 +2,9 @@ import React from "react";
 import { Table } from "reactstrap";
 import "./style.css";
 
-const SearchResults = ({ employees, handleInputChange }) => {
-	// console.log("handling the click", handleClick);
-	console.log("employeeeeeees", employees);
+const SearchResults = ({ employees, handleInputChange, handleClick }) => {
+	console.log("handling the click", handleClick);
+	console.log("these are the employees", employees);
 
 	return (
 		<>
@@ -28,7 +28,11 @@ const SearchResults = ({ employees, handleInputChange }) => {
 				<thead>
 					<tr>
 						<th>Image</th>
-						<th className="dropdown-toggle" data-toggle="dropdown">
+						<th
+							className="dropdown-toggle"
+							data-toggle="dropdown"
+							onClick={(e) => handleClick(e)}
+						>
 							Name
 							<span className="caret"></span>
 						</th>
