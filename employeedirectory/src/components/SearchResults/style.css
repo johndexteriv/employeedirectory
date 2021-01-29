@@ -1,3 +1,17 @@
 thead {
 	background-color: ghostwhite;
 }
+
+.search {
+	width: 80%;
+	margin: auto;
+	padding: 10px;
+}
+input {
+	text-align: center;
+}
+.container-fluid {
+	display: block;
+	position: relative;
+	background-color: gainsboro;
+}

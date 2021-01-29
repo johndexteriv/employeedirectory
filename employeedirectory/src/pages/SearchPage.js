@@ -6,7 +6,7 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
-	const [search, setSearch] = useState([{}]);
+	// const [search, setSearch] = useState([{}]);
 	const [employees, setEmployees] = useState([{}]);
 
 	useEffect(() => {
@@ -19,6 +19,7 @@ const SearchPage = () => {
 			}
 			console.log("Response before set employees", res.data.results);
 			setEmployees(res.data.results);
+			// setSearch(res.data.results);
 		});
 		// .catch((error) => setError(error));
 	}, []);
@@ -26,19 +27,21 @@ const SearchPage = () => {
 
 	const handleInputChange = (event) => {
 		console.log("this is the search input", event.target.value);
+		console.log("handle input change employees", employees);
 	};
 
-	// const handleFilter = () => {
-	// On click handle asec/desc employee sorting
-	// To be passed through search results
-	// }
-
+	// const handleClick = (event) => {
+	// 	console.log("clickedddd", event.target.value);
+	// };
+	// console.log(handleClick);
 	return (
 		<>
 			<Header />
 			<Container style={{ minHeight: "95%", width: "80%" }}>
-				<SearchForm handleInputChange={handleInputChange} results={search} />
-				<SearchResults employees={employees} />
+				<SearchResults
+					employees={employees}
+					handleInputChange={handleInputChange}
+				/>
 			</Container>
 		</>
 	);

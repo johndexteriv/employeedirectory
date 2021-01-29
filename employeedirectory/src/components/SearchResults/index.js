@@ -2,11 +2,28 @@ import React from "react";
 import { Table } from "reactstrap";
 import "./style.css";
 
-const SearchResults = ({ employees }) => {
+const SearchResults = ({ employees, handleInputChange }) => {
+	// console.log("handling the click", handleClick);
 	console.log("employeeeeeees", employees);
 
 	return (
 		<>
+			<div className="container-fluid">
+				<form className="search">
+					<div className="form-group">
+						<br></br>
+						<input
+							onChange={(e) => handleInputChange(e)}
+							name="search"
+							list="search"
+							type="text"
+							className="form-control"
+							placeholder="Search by employee"
+							id="search"
+						/>
+					</div>
+				</form>
+			</div>
 			<Table striped>
 				<thead>
 					<tr>
