@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const SearchForm = (props) => {
+const SearchForm = ({ handleInputChange }) => {
 	return (
 		<>
 			<div className="container-fluid">
@@ -9,20 +9,14 @@ const SearchForm = (props) => {
 					<div className="form-group">
 						<br></br>
 						<input
-							value={props.search}
-							onChange={props.handleInputChange}
+							onChange={(e) => handleInputChange(e)}
 							name="search"
 							list="search"
 							type="text"
 							className="form-control"
-							placeholder="Type in search term to begin"
+							placeholder="Search by employee"
 							id="search"
 						/>
-						{/* <datalist id="breeds">
-						{props.breeds.map((breed) => (
-                            <option value={breed} key={breed} />
-						))}
-					</datalist> */}
 					</div>
 				</form>
 			</div>

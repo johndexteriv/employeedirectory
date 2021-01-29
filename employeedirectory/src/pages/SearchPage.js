@@ -6,7 +6,7 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
-	const [search, setSearch] = useState("");
+	const [search, setSearch] = useState([{}]);
 	const [employees, setEmployees] = useState([{}]);
 
 	useEffect(() => {
@@ -25,7 +25,7 @@ const SearchPage = () => {
 	console.log("Search Page SetEmployees", employees);
 
 	const handleInputChange = (event) => {
-		setSearch(event.target.value);
+		console.log("this is the search input", event.target.value);
 	};
 
 	// const handleFilter = () => {
