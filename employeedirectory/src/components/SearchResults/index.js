@@ -55,9 +55,9 @@ const SearchResults = ({ employees, handleInputChange }) => {
 							);
 						})
 					) : (
-						<>
+						<div style={{ textAlign: "center" }}>
 							<h1>Sorry no user found</h1>
-						</>
+						</div>
 					)}
 				</tbody>
 			</Table>
