@@ -55,7 +55,9 @@ const SearchResults = ({ employees, handleInputChange }) => {
 							);
 						})
 					) : (
-						<></>
+						<>
+							<h1>Sorry no user found</h1>
+						</>
 					)}
 				</tbody>
 			</Table>

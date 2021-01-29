@@ -5,8 +5,8 @@ import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
-	// const [search, setSearch] = useState([{}]);
 	const [employees, setEmployees] = useState([{}]);
+	const [filteredEmployees, setFilteredEmployees] = useState([{}]);
 
 	useEffect(() => {
 		API().then((res) => {
@@ -17,14 +17,18 @@ const SearchPage = () => {
 				throw new Error(res.data.message);
 			}
 			setEmployees(res.data.results);
-			// setSearch(res.data.results);
+			setFilteredEmployees(res.data.results);
 		});
 		// .catch((error) => setError(error));
 	}, []);
 
 	const handleInputChange = (event) => {
-		console.log("this is the search input", event.target.value);
-		console.log("handle input change employees", employees);
+		const searchQuery = event.target.value;
+		const searchQueryList = employees.filter((employee) => {
+			let values = Object.values(employee).join("").toLowerCase();
+			return values.indexOf(searchQuery.toLowerCase()) !== -1;
+		});
+		setFilteredEmployees(searchQueryList);
 	};
 
 	// const handleClick = (event) => {
@@ -36,7 +40,7 @@ const SearchPage = () => {
 			<Header />
 			<Container style={{ minHeight: "95%", width: "80%" }}>
 				<SearchResults
-					employees={employees}
+					employees={filteredEmployees}
 					handleInputChange={handleInputChange}
 				/>
 			</Container>
