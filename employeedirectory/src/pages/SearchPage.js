@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
@@ -17,13 +16,11 @@ const SearchPage = () => {
 			if (res.data.status === "error") {
 				throw new Error(res.data.message);
 			}
-			console.log("Response before set employees", res.data.results);
 			setEmployees(res.data.results);
 			// setSearch(res.data.results);
 		});
 		// .catch((error) => setError(error));
 	}, []);
-	console.log("Search Page SetEmployees", employees);
 
 	const handleInputChange = (event) => {
 		console.log("this is the search input", event.target.value);
