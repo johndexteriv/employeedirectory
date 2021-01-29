@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const SearchTerms = (query) => {
-	return axios.get("https://randomuser.me/api/?" + query + "results=50");
+const SearchTerms = () => {
+	return axios.get("https://randomuser.me/api/?results=25");
 };
 
 export default SearchTerms;

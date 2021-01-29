@@ -7,32 +7,22 @@ import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
 	const [search, setSearch] = useState("");
-	const [image, setImage] = useState("");
-	const [name, setName] = useState("");
-	const [phone, setPhone] = useState("");
-	const [email, setEmail] = useState("");
-	const [dob, setDob] = useState("");
-	// const [employees, setEmployees] = useState({
-	// 	image: "",
-	// 	name: "",
-	// 	phone: "",
-	// 	email: "",
-	// 	dob: "",
-	// });
+	const [employees, setEmployees] = useState([{}]);
 
 	useEffect(() => {
-		API(search).then((res) => {
+		API().then((res) => {
 			if (res.data.length === 0) {
 				throw new Error("No results found.");
 			}
 			if (res.data.status === "error") {
 				throw new Error(res.data.message);
 			}
-			console.log(res.data.results);
-			setName(res.data.results.name);
+			console.log("Response before set employees", res.data.results);
+			setEmployees(res.data.results);
 		});
 		// .catch((error) => setError(error));
-	}, [search]);
+	}, []);
+	console.log("Search Page SetEmployees", employees);
 
 	const handleInputChange = (event) => {
 		setSearch(event.target.value);
@@ -48,7 +38,7 @@ const SearchPage = () => {
 			<Header />
 			<Container style={{ minHeight: "95%", width: "80%" }}>
 				<SearchForm handleInputChange={handleInputChange} results={search} />
-				<SearchResults />
+				<SearchResults employees={employees} />
 			</Container>
 		</>
 	);
