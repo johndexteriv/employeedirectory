@@ -21,3 +21,28 @@ The user should be able to:
 - Sort the table by at least one category
 
 - Filter the users by at least one property.
+
+## Built With
+
+- [ReactJS](https://reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [ReactStrap](https://reactstrap.github.io/)
+
+## Deployed On
+
+- [GitHub](https://www.github.com/)
+
+## Author
+
+- [**Dexter Garner**](https://github.com/johndexteriv)
+
+## License
+
+This project is licensed under the MIT License.
+
+## Repository and Deployed Application
+
+- [GitHub Repo](https://github.com/johndexteriv/employeedirectory)
+- [Deployed Applicatin](https://johndexteriv.github.io/employeedirectory/)
+
+![EmployeeDirectory](/public/assets/images/employeedirectory.png)
