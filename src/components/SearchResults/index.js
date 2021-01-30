@@ -60,9 +60,9 @@ const SearchResults = ({ employees, handleInputChange, handleClick }) => {
 							);
 						})
 					) : (
-						<div style={{ textAlign: "center" }}>
-							<h1>Sorry no employee found</h1>
-						</div>
+						<tr>
+							<td>No data</td>
+						</tr>
 					)}
 				</tbody>
 			</Table>

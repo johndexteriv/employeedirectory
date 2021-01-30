@@ -5,8 +5,8 @@ import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
 
 const SearchPage = () => {
-	const [employees, setEmployees] = useState([{}]);
-	const [filteredEmployees, setFilteredEmployees] = useState([{}]);
+	const [employees, setEmployees] = useState([]);
+	const [filteredEmployees, setFilteredEmployees] = useState([]);
 
 	useEffect(() => {
 		API().then((res) => {
@@ -37,27 +37,31 @@ const SearchPage = () => {
 		console.log("click event value", event.target.attributes[2].value);
 		// console.log("event", event);
 
-		const descending = filteredEmployees.sort((a, b) => {
-			var nameA = a.name.first.toLowerCase(),
-				nameB = b.name.first.toLowerCase();
-			if (nameA > nameB) return -1;
-			if (nameA < nameB) return 1;
-			return 0;
-		});
+		const descending = filteredEmployees
+			.map((e) => e)
+			.sort((a, b) => {
+				var nameA = a.name.first.toLowerCase(),
+					nameB = b.name.first.toLowerCase();
+				if (nameA > nameB) return -1;
+				if (nameA < nameB) return 1;
+				return 0;
+			});
 		setFilteredEmployees(descending);
 		console.log("employees descending", descending);
 
-		const ascending = filteredEmployees.sort((a, b) => {
-			var nameA = a.name.first.toLowerCase(),
-				nameB = b.name.first.toLowerCase();
-			if (nameA < nameB) return -1;
-			if (nameA > nameB) return 1;
-			return 0;
-		});
-		setFilteredEmployees(ascending);
+		// setFilteredEmployees(descending);
+
+		// const ascending = filteredEmployees.map(e=>e).sort((a, b) => {
+		// 	var nameA = a.name.first.toLowerCase(),
+		// 		nameB = b.name.first.toLowerCase();
+		// 	if (nameA < nameB) return -1;
+		// 	if (nameA > nameB) return 1;
+		// 	return 0;
+		// });
+		// setFilteredEmployees(ascending);
 		// clicked = true;
 		// console.log(clicked);
-		console.log("employees ascending", ascending);
+		// console.log("employees ascending", ascending);
 	};
 
 	return (
