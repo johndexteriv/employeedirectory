@@ -34,7 +34,18 @@ const SearchPage = () => {
 	};
 
 	const handleClick = (event) => {
-		let clicked = false;
+		console.log("click event value", event.target.attributes[2].value);
+		// console.log("event", event);
+
+		const descending = filteredEmployees.sort((a, b) => {
+			var nameA = a.name.first.toLowerCase(),
+				nameB = b.name.first.toLowerCase();
+			if (nameA > nameB) return -1;
+			if (nameA < nameB) return 1;
+			return 0;
+		});
+		setFilteredEmployees(descending);
+		console.log("employees descending", descending);
 
 		const ascending = filteredEmployees.sort((a, b) => {
 			var nameA = a.name.first.toLowerCase(),
@@ -44,8 +55,8 @@ const SearchPage = () => {
 			return 0;
 		});
 		setFilteredEmployees(ascending);
-		clicked = true;
-		console.log(clicked);
+		// clicked = true;
+		// console.log(clicked);
 		console.log("employees ascending", ascending);
 	};
 

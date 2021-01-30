@@ -32,6 +32,7 @@ const SearchResults = ({ employees, handleInputChange, handleClick }) => {
 							className="dropdown-toggle"
 							data-toggle="dropdown"
 							onClick={(e) => handleClick(e)}
+							value="true"
 						>
 							Name
 							<span className="caret"></span>
