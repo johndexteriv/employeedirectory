@@ -1,7 +1,9 @@
 thead {
 	background-color: ghostwhite;
 }
-
+.dropdown-toggle:hover {
+	cursor: pointer;
+}
 .search {
 	width: 80%;
 	margin: auto;

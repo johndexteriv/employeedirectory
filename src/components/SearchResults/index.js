@@ -3,9 +3,6 @@ import { Table } from "reactstrap";
 import "./style.css";
 
 const SearchResults = ({ employees, handleInputChange, handleClick }) => {
-	console.log("handling the click", handleClick);
-	console.log("these are the employees", employees);
-
 	return (
 		<>
 			<div className="container-fluid">

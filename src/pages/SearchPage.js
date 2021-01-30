@@ -10,17 +10,18 @@ const SearchPage = () => {
 	const [click, setClick] = useState(true);
 
 	useEffect(() => {
-		API().then((res) => {
-			if (res.data.length === 0) {
-				throw new Error("No results found.");
-			}
-			if (res.data.status === "error") {
-				throw new Error(res.data.message);
-			}
-			setEmployees(res.data.results);
-			setFilteredEmployees(res.data.results);
-		});
-		// .catch((error) => setError(error));
+		API()
+			.then((res) => {
+				if (res.data.length === 0) {
+					throw new Error("No results found.");
+				}
+				if (res.data.status === "error") {
+					throw new Error(res.data.message);
+				}
+				setEmployees(res.data.results);
+				setFilteredEmployees(res.data.results);
+			})
+			.catch((error) => console.log(error));
 	}, []);
 
 	const handleInputChange = (event) => {
